@@ -10,14 +10,14 @@
 <body>
 
     <div class="card col-sm-11 col-md-4 offset-1 offset-md-4">
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success hidden" role="alert">
             TODO VA BIEN
         </div>
         <div class="card-body">
             <h5 class="card-title">Register Account</h5>
 
             <!-- FORM INIT -->
-            <form>
+            <form onsubmit="SubmitForm(event)" onchange="FormInputs(event)">
 
                 <div class="input-group mb-3" id="name">
                     <div class="input-group-prepend">
@@ -30,7 +30,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="lastname" placeholder="Your last name">
+                    <input type="text" class="form-control lastname" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="lastname" placeholder="Your last name">
                 </div>
 
                 <div class="input-group mb-3" id="email">
@@ -54,13 +54,13 @@
                     <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="reapet" placeholder="Repeat Password">
                 </div>
 
-                <div class="alert alert-danger" role="alert">
-                    ALGUN ERROR
+                <div class="alert alert-danger hidden" role="alert" id="error">
+                    
                 </div>
 
                 <!-- BTN  -->
-                <button type="submit" class="btn btn-success">Save</button>
-                <button class="btn btn-success" type="button" disabled>
+                <button type="submit" class="btn btn-success" id="send">Save</button>
+                <button class="btn btn-success hidden" type="button" disabled id="loading">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...
                 </button>
